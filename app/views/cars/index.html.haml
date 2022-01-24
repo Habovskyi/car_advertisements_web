@@ -1,0 +1,14 @@
+%span{:style => "text-align: center; color: #730E15; font-style: italic; font-size: 30px"}
+  %h3 Cars List
+%span{:style => "color: #730E15; font-style: italic; font-size: 26px"}
+  - if @cars.any?
+    = "Number of cars found: #{@cars.count}"
+    %br
+    %span{:style => "font-size: 20px"}
+      - @cars.each do |car|
+        %span{:style => "font-style: italic; font-size: 24px"}
+          =link_to "#{car.id}. #{car.make + ' ' + car.model + ', ' + car.year.to_s + ', $' + car.price.to_s}", car
+          %br
+  - else
+    = "Cars not found"
+
