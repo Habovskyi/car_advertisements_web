@@ -90,6 +90,7 @@ GEM
     digest (3.1.0)
     erubi (1.10.0)
     erubis (2.7.0)
+    ffaker (2.20.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     haml (5.2.2)
@@ -239,6 +240,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  ffaker
   hamlit-rails
   html2haml
   importmap-rails

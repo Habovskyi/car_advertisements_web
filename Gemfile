@@ -46,6 +46,8 @@ gem 'hamlit-rails'
 
 gem 'html2haml'
 
+gem 'ffaker', require: false
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
