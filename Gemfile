@@ -49,6 +49,8 @@ gem 'html2haml'
 gem 'ffaker', require: false
 
 gem 'devise'
+
+gem 'pry-rails'
 # Use Sass to process CSS
 # gem "sassc-rails"
 

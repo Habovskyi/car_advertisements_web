@@ -1,0 +1,20 @@
+%span{:style => "text-align: center; color: #730E15; font-style: italic; font-size: 30px"}
+  %h3 Search car
+  - if @user_searches.any?
+    - @user_searches.each do |search|
+      %span{:style => "font-style: italic; font-size: 24px"}
+      = "Make: #{search.make}"
+      %br
+      = "Model: #{search.model}"
+      %br
+      = "Year from: #{search.year_from}"
+      %br
+      = "Year to: #{search.year_to}"
+      %br
+      = "Price from: #{search.price_from}"
+      %br
+      = "Price to: #{search.price_to}"
+      %br
+      = "Search date: #{search.created_at.strftime("%Y-%m-%d %H:%M:%S")}"
+  - else
+    = 'No searches'

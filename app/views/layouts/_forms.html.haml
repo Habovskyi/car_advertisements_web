@@ -1,0 +1,27 @@
+= form_with url: searches_path, method: :post do |form|
+  %div
+    = form.label :make
+    %br/
+    = form.text_field :make
+  %div
+    = form.label :model
+    %br/
+    = form.text_field :model
+  %div
+    = form.label :year_from
+    %br/
+    = form.number_field :year_from
+  %div
+    = form.label :year_to
+    %br/
+    = form.number_field :year_to
+  %div
+    = form.label :price_from
+    %br/
+    = form.number_field :price_from
+  %div
+    = form.label :price_to
+    %br/
+    = form.number_field :price_to
+  %div
+    = form.submit "Search"

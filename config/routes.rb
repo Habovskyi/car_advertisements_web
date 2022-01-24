@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   resources :cars, only: %i[index show]
+  resources :searches
   root 'homes#index'
 
   get '/help', to: 'homes#show'
+
+  get '/search', to: 'searches#create'
 end
