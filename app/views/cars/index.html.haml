@@ -17,7 +17,7 @@
     %br
   %br
   - if @cars.any?
-    = "Number of cars found: #{@cars.count}"
+    = "Number of cars found: #{@count}"
     %br
     %span{:style => "font-size: 20px"}
       - @cars.each do |car|
@@ -26,4 +26,5 @@
           %br
   - else
     = "Cars not found"
+= paginate @cars
 

@@ -18,3 +18,5 @@
       = "Search date: #{search.created_at.strftime("%Y-%m-%d %H:%M:%S")}"
   - else
     = 'No searches'
+
+= paginate @user_searches
