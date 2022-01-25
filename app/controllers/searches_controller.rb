@@ -1,8 +1,7 @@
 class SearchesController < ApplicationController
   before_action :authenticate_user!, only: [:index]
   def index
-    @user_searches = Search.where(user_id: current_user.id)
-    @user_searches = @user_searches.page params[:page]
+    @user_searches = Search.where(user_id: current_user.id).page params[:page]
   end
 
   def new

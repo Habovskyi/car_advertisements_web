@@ -1,7 +1,8 @@
 class CarsController < ApplicationController
   def index
-    @count = Car.count
-    @cars = Search.engine(search_params).order(params[:sort_type]).page params[:page]
+    @cars = Search.engine(search_params)
+    @count = @cars.count
+    @cars = @cars.order(params[:sort_type]).page params[:page]
     @search_params = search_params
   end
 
