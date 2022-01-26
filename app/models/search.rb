@@ -10,38 +10,26 @@ class Search < ApplicationRecord
   end
 
   def self.make(value)
-    " AND make LIKE '#{value}'"
+    " AND lower(make) LIKE '#{value.downcase}'"
   end
 
   def self.model(value)
-    " AND model LIKE '#{value}'"
+    " AND lower(model) LIKE '#{value.downcase}'"
   end
 
   def self.year_from(value)
-    return unless int?(value)
-
     " AND year >= '#{value}'"
   end
 
   def self.year_to(value)
-    return unless int?(value)
-
     " AND year <= '#{value}'"
   end
 
   def self.price_from(value)
-    # return unless int?(value)
-
     " AND price >= '#{value}'"
   end
 
   def self.price_to(value)
-    #return unless int?(value)
-
-    " AND price <= '#{value}'"
-  end
-
-  def self.int?(val)
-    val.to_s[/^\d+$/]
+   " AND price <= '#{value}'"
   end
 end
