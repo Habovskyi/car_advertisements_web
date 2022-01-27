@@ -2,8 +2,9 @@ require 'ffaker'
 
 namespace :car do
   desc 'Generate 50 cars'
-  task create: :environment do
-    100.times do
+  task :create, [:count] => [:environment] do |_t, args|
+    count = args[:count] || 1
+    count.to_i.times do
       Car.create(
         make: FFaker::Vehicle.make,
         model: FFaker::Vehicle.model,
