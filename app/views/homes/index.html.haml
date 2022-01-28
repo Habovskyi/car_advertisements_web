@@ -1,0 +1,9 @@
+%main
+  %section.py-5.container
+    -if current_user
+      %h2.fw-light.fst-italic.text-center.text-primary
+        Welcome #{current_user.email}!
+    -else
+      %h2.fw-light.fst-italic.text-center.text-primary
+        Welcome to our service!
+
