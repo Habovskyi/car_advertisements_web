@@ -27,13 +27,13 @@ class FindCar
   end
 
   def year(scoped, query_from, query_to)
-    query_from.present? ? scoped.where('year_from >= ?', query_from) : scoped
-    query_to.present? ? scoped.where('year_to <= ?', query_to) : scoped
+    query_from.present? ? scoped.where('year >= ?', query_from) : scoped
+    query_to.present? ? scoped.where('year <= ?', query_to) : scoped
   end
 
   def price(scoped, query_from, query_to)
-    query_from.present? ? scoped.where('price_from >= ?', query_from) : scoped
-    query_to.present? ? scoped.where('price_to <= ?', query_to) : scoped
+    query_from.present? ? scoped.where('price >= ?', query_from) : scoped
+    query_to.present? ? scoped.where('price <= ?', query_to) : scoped
   end
 
   def sort(scoped, sort_type, sort_direction)
