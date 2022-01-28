@@ -1,27 +1,21 @@
-= form_with url: searches_path, method: :post do |form|
-  %div
-    = form.label :make
-    %br/
-    = form.text_field :make
-  %div
-    = form.label :model
-    %br/
-    = form.text_field :model
-  %div
-    = form.label :year_from
-    %br/
-    = form.number_field :year_from
-  %div
-    = form.label :year_to
-    %br/
-    = form.number_field :year_to
-  %div
-    = form.label :price_from
-    %br/
-    = form.number_field :price_from
-  %div
-    = form.label :price_to
-    %br/
-    = form.number_field :price_to
-  %div
-    = form.submit "Search"
+%body.text-center
+  %main
+    %h3.fw-light.search_title Please enter search rules
+    = form_with url: searches_path, method: :post do |form|
+      .row.g-2.col-5.col-form-label-lg.form
+        .col
+          = form.text_field :make, class: "border border-primary border-3 rounded-3 area", placeholder: "Make"
+        .col
+          = form.text_field :model, class: "border border-primary border-3 rounded-3 area", placeholder: "Model"
+        .col
+          = form.number_field :year_from, class: "border border-primary border-3 rounded-3 area", placeholder: "Year from"
+        .col
+          = form.number_field :year_to, class: "border border-primary border-3 rounded-3 area", placeholder: "Year to"
+        .col
+          = form.number_field :price_from, class: "border border-primary border-3 rounded-3 area", placeholder: "Price from"
+        .col
+          = form.number_field :price_to, class: "border border-primary border-3 rounded-3 area", placeholder: "Price to"
+        %div
+          = form.submit "Search", class: "btn btn-primary"
+
+
