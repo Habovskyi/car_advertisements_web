@@ -1,36 +1,36 @@
 %main
-  %span{:style => "color: #730E15; font-style: italic; font-size: 26px"}
-    -unless request.query_parameters.except("sort_direction", "sort_type", "page").blank?
-      .card.text-white.bg-primary.mb-3{:style => "max-width: 18rem;"}
-        .card-header Search Request
-        .card-body
-          %h5.card-text
-            = "Make: #{request.query_parameters[:make]}"
-            = "Model: #{request.query_parameters[:model]}"
-            = "Year from: #{request.query_parameters[:year_from]}"
-            = "Year to: #{request.query_parameters[:year_to]}"
-            = "Price from: #{request.query_parameters[:price_from]}"
-            = "Price to: #{request.query_parameters[:price_to]}"
-
-      = 'Search request'
-      %br
-      -request.query_parameters.each do |key, value|
-        ="#{key}: #{value}"
-        %br
-  %section.py-5.text-center.container
-    .row.py-lg-5
-      .col-lg-6.col-md-8.mx-auto
+  %section.py-5.container
+    .row.text-center
+      .col-lg-6.col-md-4.mx-auto
         %h1.fw-light List of cars
         %p.lead.text-muted The list is a catalog of cars from around the world and with different parameters. Here you will find exactly what you are looking for!
+    %span{:style => "color: #730E15; font-style: italic; font-size: 26px"}
+      -unless request.query_parameters.except("sort_direction", "sort_type", "page").blank?
+        .card.text-white.bg-primary.mb-3.start-50.translate-middle-x{:style => "max-width: 18rem;"}
+          .card-header.text-center Search Request
+          .card-body
+            %h5.card-text
+              Make: #{request.query_parameters[:make]}
+              %br
+              Model: #{request.query_parameters[:model]}
+              %br
+              Year from: #{request.query_parameters[:year_from]}
+              %br
+              Year to: #{request.query_parameters[:year_to]}
+              %br
+              Price from: #{request.query_parameters[:price_from]}
+              %br
+              Price to: #{request.query_parameters[:price_to]}
+    - if @cars.any?
+      %p.text-center.fs-4.fst-italic Number of cars found: #{@count}
+      .text-center
         = link_to 'Price Asc', cars_path(request.query_parameters.merge({:sort_type => "price"}).merge({:sort_direction => "asc"})), class: "btn btn-primary my-2"
         = link_to 'Price Desc', cars_path(request.query_parameters.merge({:sort_type => "price"}).merge({:sort_direction => "desc"})), class: "btn btn-primary my-2"
         = link_to 'Date Added Asc', cars_path(request.query_parameters.merge({:sort_type => "created_at"}).merge({:sort_direction => "asc"})), class: "btn btn-primary my-2"
         = link_to 'Date Added Desc', cars_path(request.query_parameters.merge({:sort_type => "created_at"}).merge({:sort_direction => "desc"})), class: "btn btn-primary my-2"
-    %p.text-center.fs-3.fst-italic "Number of cars found: #{@count}"
-    .album.py-5
-      .container
-        .row.row-cols-1.row-cols-sm-2.row-cols-md-3.g-3
-          - if @cars.any?
+      .album.py-5
+        .container
+          .row.row-cols-1.row-cols-sm-2.row-cols-md-3.g-3
             - @cars.each do |car|
               .col.fs-5
                 .card.shadow-sm
@@ -47,12 +47,12 @@
                     %br
                     ="Odometer: #{car.odometer}"
                     %br
-
-                  .d-flex.justify-content-between.align-items-center
-                    .btn-group
-                      = link_to 'More', car, class: "btn btn-sm btn-primary"
-                    %small.text-muted
-                      = car.created_at.strftime("%Y-%m-%d %H:%M:%S")
-          - else
-            = "Cars not found"
+                    .d-flex.justify-content-between.align-items-center
+                      .btn-group
+                        = link_to 'More', car, class: "btn btn-sm btn-primary"
+                      %small.text-muted
+                        = car.created_at.strftime("%Y-%m-%d %H:%M:%S")
+    - else
+      %section.container
+        %p.text-center.fs-4.fst-italic No cars were found for your request.
   =paginate @cars
