@@ -14,7 +14,6 @@ class FindCar
     @cars_count = scoped.count
     scoped = sort(scoped, params[:sort_type], params[:sort_direction])
     scoped.page params[:page]
-    
   end
 
   private
