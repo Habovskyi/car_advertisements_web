@@ -10,6 +10,7 @@ class CarsController < ApplicationController
   end
 
   private
+
   def search_params
     params.permit(:make, :model, :year_from, :year_to, :price_from, :price_to, :sort_type, :sort_direction, :page)
   end
