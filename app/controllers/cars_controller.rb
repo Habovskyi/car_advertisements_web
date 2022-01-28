@@ -1,9 +1,8 @@
 class CarsController < ApplicationController
   def index
-    @cars = Search.engine(search_params)
-    @count = @cars.count
-    @cars = @cars.order(params[:sort_type]).page params[:page]
-    @search_params = search_params
+    @find_car = FindCar.new
+    @cars = @find_car.call(search_params)
+    @count = @find_car.cars_count
   end
 
   def show
@@ -11,12 +10,7 @@ class CarsController < ApplicationController
   end
 
   private
-
-  def sort_params
-    params.permit(:sort_type)
-  end
-
   def search_params
-    params.permit(:make, :model, :year_from, :year_to, :price_from, :price_to)
+    params.permit(:make, :model, :year_from, :year_to, :price_from, :price_to, :sort_type, :sort_direction, :page)
   end
 end

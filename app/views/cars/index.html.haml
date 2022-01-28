@@ -1,18 +1,18 @@
 %span{:style => "text-align: center; color: #730E15; font-style: italic; font-size: 30px"}
   %h3 Cars List
 
-= link_to 'Price Asc', cars_path({:sort_type => "price asc"}.merge(@search_params))
+= link_to 'Price Asc', cars_path(request.params.merge({:sort_type => "price"}).merge({:sort_direction => "asc"}))
 %br
-= link_to 'Price Desc', cars_path({:sort_type => "price desc"}.merge(@search_params))
+= link_to 'Price Desc', cars_path(request.params.merge({:sort_type => "price"}).merge({:sort_direction => "desc"}))
 %br
-= link_to 'Date Added Asc', cars_path({:sort_type => "created_at asc"}.merge(@search_params))
+= link_to 'Date Added Asc', cars_path(request.params.merge({:sort_type => "created_at"}).merge({:sort_direction => "asc"}))
 %br
-= link_to 'Date Added Desc', cars_path({:sort_type => "created_at desc"}.merge(@search_params))
+= link_to 'Date Added Desc', cars_path(request.params.merge({:sort_type => "created_at"}).merge({:sort_direction => "desc"}))
 %br
 %span{:style => "color: #730E15; font-style: italic; font-size: 26px"}
-  = 'Search request' unless @search_params.blank?
+  = 'Search request' unless request.query_parameters.blank?
   %br
-  -@search_params.each do |key, value|
+  -request.query_parameters.each do |key, value|
     ="#{key}: #{value}"
     %br
   %br
