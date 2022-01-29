@@ -1,7 +1,8 @@
 # frozen_string_literal: true
-#! config/initializers/devise.rb
 
-#! Create custom failure for turbo
+# ! config/initializers/devise.rb
+
+# ! Create custom failure for turbo
 class TurboFailureApp < Devise::FailureApp
   def respond
     if request_format == :turbo_stream
@@ -12,7 +13,7 @@ class TurboFailureApp < Devise::FailureApp
   end
 
   def skip_format?
-    %w(html turbo_stream */*).include? request_format.to_s
+    %w[html turbo_stream */*].include? request_format.to_s
   end
 end
 
@@ -35,7 +36,7 @@ Devise.setup do |config|
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
 
-  #! Change parent controller with custom controller
+  # ! Change parent controller with custom controller
   config.parent_controller = 'Users::DeviseController'
 
   # ==> Mailer Configuration
@@ -282,7 +283,7 @@ Devise.setup do |config|
   #
   # The "*/*" below is required to match Internet Explorer requests.
 
-  #! Override navigational_formats
+  # ! Override navigational_formats
   config.navigational_formats = ['*/*', :html, :turbo_stream]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
@@ -298,7 +299,7 @@ Devise.setup do |config|
   # change the failure app, you can configure them inside the config.warden block.
   #
 
-  #! Set custom failure
+  # ! Set custom failure
   config.warden do |manager|
     manager.failure_app = TurboFailureApp
     #   manager.intercept_401 = false
