@@ -74,6 +74,10 @@ group :development, :test do
   gem 'rubocop-rspec'
 
   gem 'fasterer'
+
+  gem 'overcommit'
+
+  gem 'bundler-audit'
 end
 
 group :development do
