@@ -3,7 +3,6 @@ class FindCar
 
   def initialize(cars = Car.all)
     @cars = cars
-    @cars_count = nil
   end
 
   def call(params)
@@ -11,8 +10,7 @@ class FindCar
     scoped = model(scoped, params[:model])
     scoped = year(scoped, params[:year_from], params[:year_to])
     scoped = price(scoped, params[:price_from], params[:price_to])
-    @cars_count = scoped.count
-    scoped = sort(scoped, params[:sort_type], params[:sort_direction])
+    scoped = sorter(scoped, params[:sort_type], params[:sort_direction])
     scoped.page params[:page]
   end
 
@@ -36,7 +34,7 @@ class FindCar
     query_to.present? ? scoped.where('price <= ?', query_to) : scoped
   end
 
-  def sort(scoped, sort_type, sort_direction)
+  def sorter(scoped, sort_type, sort_direction)
     sort_direction ||= :desc
     sort_type ||= :price
     scoped.order(sort_type => sort_direction)

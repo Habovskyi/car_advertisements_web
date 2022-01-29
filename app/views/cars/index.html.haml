@@ -23,7 +23,7 @@
                 %br
                 Price to: #{request.query_parameters[:price_to]}
       - if @cars.any?
-        %p.text-center.fs-4.fst-italic Number of cars found: #{@count}
+        %p.text-center.fs-4.fst-italic Number of cars found: #{@cars.total_count}
         .text-center
           = link_to 'Price Asc', cars_path(request.query_parameters.merge({:sort_type => "price"}).merge({:sort_direction => "asc"})), class: "btn btn-outline-primary"
           = link_to 'Price Desc', cars_path(request.query_parameters.merge({:sort_type => "price"}).merge({:sort_direction => "desc"})), class: "btn btn-outline-primary"

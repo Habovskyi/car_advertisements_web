@@ -1,8 +1,6 @@
 class CarsController < ApplicationController
   def index
-    @find_car = FindCar.new
-    @cars = @find_car.call(search_params)
-    @count = @find_car.cars_count
+    @cars = FindCar.new.call(search_params)
   end
 
   def show
