@@ -5,10 +5,19 @@
 .form {
   margin: 50px auto 0;
 }
+
 .area {
   height: 45px;
 }
 
 .search_title {
   margin-top: 30px;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+.help_accordion{
+  width: 800px;
 }
