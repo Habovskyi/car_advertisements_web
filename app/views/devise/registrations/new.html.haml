@@ -13,5 +13,5 @@
         .form-group.mt-2
           = f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control', placeholder: "Password confirmation"
         .form-group.mt-4
-          = f.submit t('.sign_up'), class: 'btn btn-primary'
+          = f.submit t('.sign_up'), class: 'btn btn-outline-primary'
       = render 'devise/shared/links'
