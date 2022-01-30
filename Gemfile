@@ -40,7 +40,7 @@ gem 'jbuilder', '~> 2.11.5'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '~> 1.10.2'
+gem 'bootsnap', '~> 1.10.2', require: false
 
 gem 'hamlit-rails', '~> 0.2.3'
 
