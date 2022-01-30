@@ -1,17 +1,19 @@
-%span{:style => "text-align: center; color: #730E15; font-style: italic; font-size: 30px"}
-  %h1 #{@car.make + ' ' + @car.model}
-%span{:style => "font-size: 24px"}
-  ="ID: #{@car.id}"
-  %br
-  ="Make: #{@car.make}"
-  %br
-  ="Model: #{@car.model}"
-  %br
-  ="Year: #{@car.year}"
-  %br
-  ="Odometer: #{@car.odometer}"
-  %br
-  ="Price: #{@car.price}"
-  %br
-  ="Description: #{@car.description}"
-  %br
+.card.border-success.mb-3{:style => "max-width: 18rem;"}
+  .card-header.bg-transparent.border-success "Car №#{@car.id}"
+  .card-body.text-success
+    %h5.card-title #{@car.make + ' ' + @car.model}
+    %p.card-text
+      ="Year: #{@car.year}"
+      %br
+      ="Odometer: #{@car.odometer}"
+      %br
+      ="Price: #{@car.price}"
+      %br
+      ="Description: #{@car.description}"
+  .card-footer.bg-transparent.border-success #{@car.created_at.strftime("%Y-%m-%d %H:%M:%S")}
+
+.card.border-primary.mb-3{:style => "max-width: 18rem;"}
+  .card-header Header
+  .card-body.text-primary
+    %h5.card-title Primary card title
+    %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
