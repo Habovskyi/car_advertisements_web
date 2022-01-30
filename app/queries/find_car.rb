@@ -25,12 +25,12 @@ class FindCar
   end
 
   def year(scoped, query_from, query_to)
-    query_from.present? ? scoped.where('year >= ?', query_from) : scoped
+    query_from.present? ? scoped = scoped.where('year >= ?', query_from) : scoped
     query_to.present? ? scoped.where('year <= ?', query_to) : scoped
   end
 
   def price(scoped, query_from, query_to)
-    query_from.present? ? scoped.where('price >= ?', query_from) : scoped
+    query_from.present? ? scoped = scoped.where('price >= ?', query_from) : scoped
     query_to.present? ? scoped.where('price <= ?', query_to) : scoped
   end
 
