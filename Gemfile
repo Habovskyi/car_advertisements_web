@@ -54,7 +54,7 @@ gem 'devise-bootstrap-views', '~> 1.0'
 
 gem 'kaminari'
 
-gem 'ffaker', require: false
+gem 'ffaker', '~> 2.20'
 
 # gem "sassc-rails"
 gem 'sassc-rails'

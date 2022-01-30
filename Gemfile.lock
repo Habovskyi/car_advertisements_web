@@ -333,7 +333,7 @@ DEPENDENCIES
   devise
   devise-bootstrap-views (~> 1.0)
   fasterer
-  ffaker
+  ffaker (~> 2.20)
   hamlit-rails
   html2haml
   importmap-rails
