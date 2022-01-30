@@ -36,7 +36,7 @@ class FindCar
 
   def sorter(scoped, sort_type, sort_direction)
     sort_direction ||= :desc
-    sort_type ||= :price
+    sort_type ||= :created_at
     scoped.order(sort_type => sort_direction)
   end
 end
