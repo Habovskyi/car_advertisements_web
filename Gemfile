@@ -77,6 +77,8 @@ group :development, :test do
 
   gem 'overcommit', '~> 0.58.0'
 
+  gem 'rack-timeout', '0.3.2'
+
   gem 'bundler-audit', '~> 0.9.0.1'
 end
 
