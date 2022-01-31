@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   get '/help', to: 'homes#show'
 
   get '/search', to: 'searches#create'
-  default_url_options :host => "localhost"
+  default_url_options host: 'localhost'
 end
