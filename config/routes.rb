@@ -11,5 +11,5 @@ Rails.application.routes.draw do
 
   get '/search', to: 'searches#create'
 
-  default_url_options host: 'localhost'
+  default_url_options Rails.application.config.action_mailer.default_url_options
 end
