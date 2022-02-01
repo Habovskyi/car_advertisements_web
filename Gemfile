@@ -74,7 +74,7 @@ group :development, :test do
 
   gem 'fasterer', '~> 0.9.0'
 
-  gem 'overcommit', '~> 0.58.0'
+  gem 'overcommit'
 
   gem 'bundler-audit', '~> 0.9.0.1'
 end

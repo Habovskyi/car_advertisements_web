@@ -344,7 +344,7 @@ DEPENDENCIES
   importmap-rails (~> 1.0.2)
   jbuilder (~> 2.11.5)
   kaminari (~> 1.2.2)
-  overcommit (~> 0.58.0)
+  overcommit
   pg (~> 1.1)
   pry-rails (~> 0.3.9)
   puma (~> 5.0)
