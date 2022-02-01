@@ -24,6 +24,8 @@ PreCommit:
   Fasterer:
     enabled: true
     on_warn: fail # Treat all warnings as failures
+    problem_on_unmodified_line: ignore
+    command: ['bundle', 'exec', 'fasterer']
 
   BundleAudit:
     enabled: true
