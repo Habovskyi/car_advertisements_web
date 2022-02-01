@@ -20,7 +20,6 @@ PreCommit:
     enabled: true
     on_warn: fail # Treat all warnings as failures
     command: ['bundle', 'exec', 'rubocop']
-
   Fasterer:
     enabled: true
     on_warn: fail # Treat all warnings as failures
