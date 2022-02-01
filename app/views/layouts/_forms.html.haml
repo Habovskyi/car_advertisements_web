@@ -1,6 +1,6 @@
 .container
   %h3.fw-light.text-center Please enter search rules
-  = form_with url: searches_path, method: :post do |form|
+  = form_with model: @search, method: :post do |form|
     .row.g-3
       .mt-3
       .col-md-6

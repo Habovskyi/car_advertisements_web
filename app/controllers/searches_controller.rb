@@ -16,6 +16,6 @@ class SearchesController < ApplicationController
   private
 
   def search_params
-    params.permit(:make, :model, :year_from, :year_to, :price_from, :price_to)
+    params.require(:search).permit(:make, :model, :year_from, :year_to, :price_from, :price_to)
   end
 end
