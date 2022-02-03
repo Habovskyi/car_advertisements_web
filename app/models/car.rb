@@ -10,8 +10,7 @@ class Car < ApplicationRecord
 
   def call(params)
     searched_cars = search(params)
-    sorted_cars = searched_cars.sorter(params[:sort_type] ||= :created_at, params[:sort_direction] ||= :desc)
-    sorted_cars.page params[:page]
+    searched_cars.sorter(params[:sort_type] ||= :created_at, params[:sort_direction] ||= :desc)
   end
 
   private
