@@ -1,5 +1,5 @@
 RSpec.describe User, type: :model do
-  let(:user) { FactoryBot.create(:user) }
+  let(:user) { create(:user) }
 
   context 'associations' do
     it { is_expected.to have_many(:searches).dependent(:delete_all) }

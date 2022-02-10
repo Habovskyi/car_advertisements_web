@@ -1,5 +1,5 @@
 RSpec.describe Search, type: :model do
-  let(:search) { FactoryBot.create(:search) }
+  let(:search) { create(:search) }
 
   context 'associations' do
     it { is_expected.to belong_to(:user) }

@@ -1,5 +1,5 @@
 RSpec.describe Car, type: :model do
-  let(:car) { FactoryBot.create(:car) }
+  let(:car) { create(:car) }
 
   context 'validation have db column' do
     it { is_expected.to have_db_column(:make).of_type(:string) }
