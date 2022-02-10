@@ -9,8 +9,8 @@ Car Adwertisment - car ad service. Here you can see a list of cars. You can also
  * Database: PostgreSQL
 
 ## How to install?
-1. ```cd car_advertisements_web```
-2. ```git clone https://github.com/Habovskyi/car_advertisements_web.git```
+1. ```git clone https://github.com/Habovskyi/car_advertisements_web.git```
+2. ```cd car_advertisements_web```
 3. ```bundle install```
 4. ```rails db:create```
 5. ```rails db:migrate```
