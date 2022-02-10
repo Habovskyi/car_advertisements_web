@@ -4,6 +4,6 @@ class HomesController < ApplicationController
   def index; end
 
   def help
-    render 'homes/help'
+    help_path
   end
 end
