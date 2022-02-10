@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root 'homes#index'
 
   resources :cars, only: %i[index show]
-  resources :searches
+  resources :searches, only: %i[index new create]
 
-  get '/help', to: 'homes#show'
+  get '/help', to: 'homes#help'
   get '/search', to: 'searches#create'
 end

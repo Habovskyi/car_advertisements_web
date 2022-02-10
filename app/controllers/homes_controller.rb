@@ -3,7 +3,7 @@
 class HomesController < ApplicationController
   def index; end
 
-  def show
+  def help
     render 'homes/help'
   end
 end
