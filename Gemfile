@@ -25,9 +25,12 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 group :development, :test do
   gem 'bundler-audit', '~> 0.9.0.1'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot', '~> 6.2'
   gem 'fasterer', '~> 0.9.0'
   gem 'overcommit'
   gem 'pry-rails', '~> 0.3.9'
+  gem 'rspec', '~> 3.10'
+  gem 'rspec-rails', '~> 5.1'
   gem 'rubocop', '~> 1.25'
   gem 'rubocop-performance', '~> 1.13.2'
   gem 'rubocop-rails', '~> 2.13.2'
@@ -40,7 +43,6 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'rspec', '~> 3.10'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 5.1'
   gem 'webdrivers'
