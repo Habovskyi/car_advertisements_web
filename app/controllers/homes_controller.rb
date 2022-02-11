@@ -3,7 +3,5 @@
 class HomesController < ApplicationController
   def index; end
 
-  def help
-    help_path
-  end
+  def help; end
 end
