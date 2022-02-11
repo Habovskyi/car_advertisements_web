@@ -1,6 +1,6 @@
 class CarsController < ApplicationController
   def index
-    @cars = Car.new.call(search_params).page params[:page]
+    @cars = FindCar.call(search_params).page params[:page]
   end
 
   def show
