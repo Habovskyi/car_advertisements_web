@@ -1,0 +1,14 @@
+.card.w-50.order-primary.mb-2.start-50.translate-middle-x.search_title.mt-5
+  .card-header.fst-italic.fs-4.text-center Car №#{@car.id}
+  .card-body
+    %h5.card-title #{@car.make + ' ' + @car.model}
+    %p.card-text.fs-5
+      ="Year: #{@car.year}"
+      %br
+      ="Odometer: #{@car.odometer}"
+      %br
+      ="Price: #{@car.price}"
+      %br
+      ="Description: #{@car.description}"
+  .card-footer.bg-transparent.border-success.fs-5.text-center.text-muted
+    = @car.created_at.strftime("%Y-%m-%d %H:%M:%S")

@@ -1,0 +1,14 @@
+%main
+  %section.py-5.container
+    -if current_user
+      %h2.fw-light.fst-italic.text-center.text-primary
+        = "Welcome #{current_user.email}!"
+    -else
+      %h2.fw-light.fst-italic.text-center.text-primary
+        = "Welcome to our service!"
+      %section.text-center.form
+        = link_to 'Login', new_user_session_path, class: "btn btn-outline-primary btn-lg"
+        %h5.fw-light.fst-italic.mt-2
+          = "Not registered yet? Do it now!"
+        = link_to 'Sign up', new_user_registration_path, class: "btn btn-outline-primary  btn-lg"
+

@@ -1,0 +1,49 @@
+.container
+
+  %h2.fw-light.text-center Help
+  .col-lg-6.col-md-4.mx-auto
+    %p.lead.text-muted.text-center Help - here you will find answers to the most frequently asked questions. We hope this helps you :)
+  #accordionExample.accordion
+    .accordion-item
+      %h2#headingOne.accordion-header
+        %button.accordion-button.collapsed{"aria-controls" => "collapseOne", "aria-expanded" => "false", "data-bs-target" => "#collapseOne", "data-bs-toggle" => "collapse", :type => "button"}
+          How to view all available cars?
+      #collapseOne.accordion-collapse.collapse{"aria-labelledby" => "headingOne", "data-bs-parent" => "#accordionExample"}
+        .accordion-body
+          To view all cars, select the Car List option in the navigation bar.
+    .accordion-item
+      %h2#headingTwo.accordion-header
+        %button.accordion-button.collapsed{"aria-controls" => "collapseTwo", "aria-expanded" => "false", "data-bs-target" => "#collapseTwo", "data-bs-toggle" => "collapse", :type => "button"}
+          How to find a car?
+      #collapseTwo.accordion-collapse.collapse{"aria-labelledby" => "headingTwo", "data-bs-parent" => "#accordionExample"}
+        .accordion-body
+          To find a car, select the Search Car option in the navigation bar and fill out the search form.
+    .accordion-item
+      %h2#headingThree.accordion-header
+        %button.accordion-button.collapsed{"aria-controls" => "collapseThree", "aria-expanded" => "false", "data-bs-target" => "#collapseThree", "data-bs-toggle" => "collapse", :type => "button"}
+          How to register?
+      #collapseThree.accordion-collapse.collapse{"aria-labelledby" => "headingThree", "data-bs-parent" => "#accordionExample"}
+        .accordion-body
+          To register, open the Account tab and select the Sign up option and fill in the form with data.
+    .accordion-item
+      %h2#headingFour.accordion-header
+        %button.accordion-button.collapsed{"aria-controls" => "collapseThree", "aria-expanded" => "false", "data-bs-target" => "#collapseFour", "data-bs-toggle" => "collapse", :type => "button"}
+          How to log in?
+      #collapseFour.accordion-collapse.collapse{"aria-labelledby" => "headingFour", "data-bs-parent" => "#accordionExample"}
+        .accordion-body
+          To log in to your account, open the Account tab and select the Login option. The next step is to enter the data that was specified during registration.
+    .accordion-item
+      %h2#headingFive.accordion-header
+        %button.accordion-button.collapsed{"aria-controls" => "collapseThree", "aria-expanded" => "false", "data-bs-target" => "#collapseFive", "data-bs-toggle" => "collapse", :type => "button"}
+          How do I view my search history?
+      #collapseFive.accordion-collapse.collapse{"aria-labelledby" => "headingFive", "data-bs-parent" => "#accordionExample"}
+        .accordion-body
+          To view your search history, select the My Searches option in the navigation bar.
+    .accordion-item
+      %h2#headingSix.accordion-header
+        %button.accordion-button.collapsed{"aria-controls" => "collapseThree", "aria-expanded" => "false", "data-bs-target" => "#collapseSix", "data-bs-toggle" => "collapse", :type => "button"}
+          How to logout?
+      #collapseSix.accordion-collapse.collapse{"aria-labelledby" => "headingFive", "data-bs-parent" => "#accordionExample"}
+        .accordion-body
+          To logout to your account, open the Account tab and select the Logout option.
+

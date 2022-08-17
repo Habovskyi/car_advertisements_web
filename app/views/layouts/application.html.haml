@@ -1,0 +1,41 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title CarAdvertisementsWeb
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_importmap_tags
+  %body
+    .container
+      %nav.navbar.navbar-expand-lg.navbar-light
+        .container-fluid
+          = link_to 'Cars Advertisements | Home', root_path, class: "navbar-brand fs-4"
+          %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarSupportedContent", "data-bs-toggle" => "collapse", :type => "button"}
+            %span.navbar-toggler-icon
+          #navbarSupportedContent.collapse.navbar-collapse
+            %ul.navbar-nav.me-auto.mb-2.mb-lg-0.fs-5
+              %li.nav-item
+                = link_to 'Car List', cars_path, class: "nav-link"
+              %li.nav-item
+                = link_to 'Search Car', new_search_path, class: "nav-link"
+              %li.nav-item
+                =link_to "My Searches", searches_path, class: "nav-link"
+              %li.nav-item
+                = link_to 'Help', help_path, class: "nav-link"
+              %li.nav-item.dropdown
+                .navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
+                  Account
+                %ul.dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+                  - if current_user
+                    %li
+                      =link_to "Logout", destroy_user_session_path, "data-turbo-method": :delete, class: "dropdown-item"
+                  -else
+                    %li
+                      =link_to "Login", new_user_session_path, class: "dropdown-item"
+                    %li
+                      =link_to "Sign up", new_user_registration_path, class: "dropdown-item"
+
+    = yield

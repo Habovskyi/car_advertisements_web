@@ -1,24 +1,34 @@
-# README
+# Car Advertisement Web
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Project description
+Car Adwertisment - car ad service. Here you can see a list of cars. You can also find a car using the characteristics of cars. Registered users have a search history option.
 
-Things you may want to cover:
+## Requirements
+ * Ruby version: 3.0.1
+ * Rails: 7.0
+ * Database: PostgreSQL
 
-* Ruby version
+## How to install?
+1. ```git clone https://github.com/Habovskyi/car_advertisements_web.git```
+2. ```cd car_advertisements_web```
+3. ```bundle install```
+4. ```rails db:create```
+5. ```rails db:migrate```
+6. ```rails s```
 
-* System dependencies
+## Rake
+To fill the database of cars created a rake task.
 
-* Configuration
+```rails car:create[count]```, where ```count``` - number cars.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Heroku
+Deployed the project on Heroku
+[Car Advertisements](https://caradvertisement.herokuapp.com/)
+## What implemented?
+* Rake task
+* Devise Auth
+* Rubocop
+* Fasterer
+* Overcommit
+* Circle CI/CD
+* Heroku
